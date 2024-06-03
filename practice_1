@@ -1,1 +1,65 @@
-select * from 
+//Exercise 1: 
+SELECT NAME from CITY 
+where (POPULATION > 120000) and (COUNTRYCODE = 'USA')
+
+//Exercise 2:
+SELECT * from CITY 
+where COUNTRYCODE = 'JPN'
+
+//Exercise 3: 
+select  CITY, STATE from STATION 
+
+//Exercise 4:
+Select DISTINCT CITY from STATION 
+where CITY like 'a%' or CITY like 'e%' or CITY like 'i%' or CITY like 'o%' or CITY like 'u%' 
+
+//Exercise 5:
+Select DISTINCT CITY from STATION 
+where CITY like '%a' or CITY like '%e' or CITY like '%i' or CITY like '%o' or CITY like '%u' 
+
+//Exercise 6:
+Select DISTINCT CITY from STATION 
+where CITY not like 'A%' and CITY not like 'E%' and CITY not like 'I%' and CITY not like 'O%' and CITY not like 'U%' 
+
+//Exercise 7
+select name from Employee
+order by name ASC
+
+//Exercise 8
+select name from Employee 
+where (salary > 2000) and (months < 10)
+order by employee_id ASC
+
+//Exercise 9
+select product_id from Products
+where low_fats = 'Y' and recyclable = 'Y'
+
+//Exercise 10
+SELECT name 
+FROM Customer 
+WHERE id NOT IN (
+    SELECT id 
+    FROM Customer 
+    WHERE referee_id = 2
+);
+
+// Exercise 11
+select name, population, area from World 
+where (area >= 3000000) or (population >= 25000000)
+
+// Exercise 12
+select DISTINCT author_id as id from Views
+where author_id = viewer_id
+order by id asc
+
+// Exercise 13
+SELECT part, assembly_step FROM parts_assembly
+where finish_date IS NULL
+
+// Exercise 14
+SELECT * FROM lyft_drivers
+WHERE yearly_salary <= 30000 OR yearly_salary >= 70000; 
+
+// Exercise 15
+select advertising_channel from uber_advertising
+where money_spent > 100000 and year = '2019'
